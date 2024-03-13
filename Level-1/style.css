@@ -3,10 +3,50 @@
     padding: 0;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+.background {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)50%), url('/CODSOFT/Level-1/images/sunset\ \(1\).jpg');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the background stays behind the content */
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    animation: slide 20s infinite; /* Adjust the duration and timing function as needed */
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)50%), url('/CODSOFT/Level-1/images/sunset\ \(1\).jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
 .main {
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)50%), url('/Level-1/images/1.jpg.jpg');
-    background-size: cover;
+    background-size:inherit;
     background-position: center;
     height: 100vh;
 }
@@ -19,18 +59,15 @@
 
 .icon {
     width: 200px;
-    height: 50px;
+    height: 70px;
     float: left;
 }
 
-.logo {
-    color:antiquewhite;
-    font-family:Arial, Helvetica, sans-serif;
-    float: left;
-    font-size: 35px;
-    padding-left: 10px;
-    padding-top: 15px;
+.icon img {
+   border-radius: 45%;
+   margin-left: -30px;
 }
+
 
 .menu {
     display: flex;
@@ -48,7 +85,7 @@ ul{
 
 ul li {
     list-style: none;
-    margin-left: 60px;
+    margin-left: 62px;
     margin-top: 27px;
     font-size: 14px;
 }
@@ -56,7 +93,7 @@ ul li {
 ul li a {
     text-decoration: none;
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
     font-weight: bold;
     transition: 0.4s ease-in-out;
@@ -67,36 +104,137 @@ ul li a:hover {
 }
 
 .search {
-    width: 340px;
-    float: right;
-    margin-left: 300px;
+    width: 330px;
+    display: flex;
+    justify-content: flex-end; /* Align the search component to the right */
+    align-items: center; /* Vertically center the search component */
+    padding-top: 20px; /* Add padding to the top */
 }
 
-.serach {
+.srch {
     font-family: 'Times New Roman', Times, serif;
     background: transparent;
-    width:200px;
-    height: 35px;
-    border: 1px solid green;
-    margin-top: 0px;
-    color: #fff;
-    border-right: none;
+    width: 200px;
+    height: 40px;
+    border: 1px solid #ccc; /* Update border color */
+    color: #333; /* Update text color */
     font-size: 16px;
-    float: left;
-    padding:10px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
+    padding: 10px;
+    border-radius: 5px; /* Update border radius */
+    transition: border-color 0.3s; /* Add transition effect for border color */
 }
 
-.btn{
-    width: 100%;
+.srch:focus {
+    outline: none;
+    border-color: #66afe9; /* Change border color on focus */
+}
+
+.btn {
+    width: auto; /* Adjust width to fit content */
     height: 40px;
-    background: green;
-    border: 2px solid green;
-    margin-top: 13px;
+    background: #4CAF50; /* Update button background color */
+    border: 1px solid #4CAF50; /* Update button border color */
+    margin-left: 10px; /* Add margin to separate button from input */
     color: #fff;
     font-size: 15px;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
- }
+    border-radius: 5px; /* Update border radius */
+    cursor: pointer; /* Add cursor pointer on hover */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Add transition effect */
+}
 
+.btn:hover {
+    background-color: #45a049; /* Change background color on hover */
+    border-color: #45a049; /* Change border color on hover */
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.content {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    color: #fff;
+    position: relative;
+}
+
+.content .par {
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1.2px;
+    line-height: 35px;
+}
+
+.content h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 60px;
+    padding-left: 20px;
+    margin-top: 10%;
+    letter-spacing: 2px;
+}
+
+.content .cn{
+    width: 150px;
+    height: 40px;
+    background: #4CAF50;
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.content .cn a {
+    text-decoration: none;
+    color: black;
+    transform: .3s ease;
+}
+
+.cn:hover {
+    background-color: #fff;
+}
+
+.content span {
+    color: limegreen;
+    font-size: 60px;
+}
+
+.socials {
+    text-decoration: none;
+    color: #fff;
+}
+
+.socials ion-icon {
+    color:black;
+    font-size: 30px;
+    padding-left: 14px;
+    padding-top: 5px;
+    transition: 0.3s ease;
+}
+
+.socials ion-icon:hover {
+    color: limegreen;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.article {
+    display: flex;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 19px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.article-image {
+    flex: 200 0 0px;
+    margin-right: 20px;
+}
