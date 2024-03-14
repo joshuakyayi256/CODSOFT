@@ -220,3 +220,47 @@ ul li a:hover {
     flex: 200 0 0px;
     margin-right: 20px;
 }
+
+.services-header {
+    text-align: center; /* Center-align the heading */
+    margin-bottom: 20px; /* Add some space between the heading and services */
+}
+
+.services-header h3 {
+    color: #fff;
+    font-size: 35px;
+    text-decoration: underline;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.service {
+    flex: 1;
+    max-width: 300px;
+    margin: 0 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.service ion-icon {
+    font-size: 64px;
+    color: #45a049;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 20px;
+    color: #fff;
+    transition: color 0.3s; /* Add transition effect for smooth color change */
+}
+
+.service p:hover {
+    color: limegreen; /* Change text color on hover */
+}
+
