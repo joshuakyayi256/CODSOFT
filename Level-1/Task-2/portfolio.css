@@ -1,0 +1,347 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+:root {
+    --bg-color: #fff;
+    --text-color: #0f0c27;
+    --hover: hsl(260, 100%, 51%);
+
+    --big-font: 3.2rem;
+      --medium-font: 1.8rem;
+      --p-font: 0.941rem;
+      --dark-blue: #012677;
+      --blue: #5c65c0;
+      --skyblue: #00b4fc;
+      --light-blue: #005bc5;
+      --dark-pink: #f64c57;
+      --dark-magenta: #e21b5a;
+      --light-green: #61e2c2;
+  }
+
+  body.active {
+    --text-color: #fff;
+    --bg-color: #0f0c27;
+    --skill-bar-color: rgba(225, 208, 208, 0.771);
+    --about-me-color: rgba(64, 64, 64, 0.614);
+    --about-me-font-color: #f2f2f2;
+  }
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    --skill-bar-color: rgba(0,0,0,0.1);
+    --about-me-color: rgba(178, 178, 227, 0.433);
+    --about-me-font-color: #2f2f2f;
+  }
+
+  section{
+    padding:  50px 10%;
+  }
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-color);
+    padding: 15px 10%;
+    transition: 0.25s;
+    box-shadow: -3px -3px 7px #ffffff73, 2px 2px rgba(94,104,121,0.288);
+
+}
+
+header.shadow {
+    box-shadow: 0 0 4px rgb(14 55 54 / 15%);
+}
+
+.logo {
+    font-size: 1.60rem;
+    font-weight: 600 ;
+    color: var(--text-color);
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: var(--hover);
+}
+
+#menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+#darkmode {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Text-BOX */
+
+.featured-box {
+    display: flex;
+    height: 100vh;
+    min-height: 700px;
+    position: relative;
+}
+
+.featured-text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin-top: 100px;
+    width: 65%;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+.featured-text .hello {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: -20px;
+    color: var(--text-color);
+}
+
+.featured-name {
+    font-size: 50px;
+    font-weight: 400;
+    margin-block:20px ;
+    color: #012677;
+    margin-bottom: 10px;
+}
+
+.typedText {
+    font-family: sans-serif;
+    color: var(--light-blue);
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.featured-text-info {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.btn {
+    display: inline-block;
+    background:#012677;
+    color: #fff;
+    margin-top:20px;
+    padding: 10px 25px;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background:#012677;
+}
+
+/* Socials */
+
+.socials_icon {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: -5px;
+    gap: 32px;
+}
+
+.socials_icon i {
+    color: #ddd;
+    font-size: 16px;
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0px 1px 5px 3px #012677;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.socials_icon i:hover {
+    transform: scale(1.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* image Box */
+
+.featured-image {
+    width: 35%;
+    display: flex;
+    justify-content: right;
+    align-content:center;
+    min-height: 80vh;
+    width: 100%;
+}
+
+.image {
+    margin-top: 10%;
+    width: 500px;
+    height: 700px;
+    border-radius: 40% 40% 40% 40%;
+    overflow: hidden;
+    animation: imgFloat 5s ease-in-out infinite;
+}
+
+@keyframes imgFloat {
+    50% {
+        transform: translateY(50px);
+    }
+}
+
+.image img {
+    width: 500px;
+    height: 700px;
+    object-fit: cover;
+}
+
+/* About Me */
+
+.about {
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.skill-box .title {
+    display: block;
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 600px;
+}
+
+.about-container {
+    gap: 1 rem;
+    margin-top: 2rem;
+    padding-left: 30px;
+}
+
+.about h1 {
+    color: var(--about-me-font-color);
+    margin-bottom: 1.1rem;
+    display: inline-block;
+    font-size: 3.5rem;
+    position: relative;
+}
+
+.about h1::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: -50%;
+    height: 3px;
+    background: linear-gradient(45deg, #f64c57, #e21b5a);
+    width: 45%;
+}
+
+.about p {
+    color: var(--text-color);
+    margin-top: 1.5rem 0;
+}
+
+.social {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.social i {
+    font-size: 16px;
+    background-color: var(--about-me-font-color);
+    margin: 5px;
+    color: #ddd;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    transition: 0.5s;
+    border-radius: 5px;
+    width: 35px;
+}
+
+.social i:hover {
+    transform: scale(1.2);
+    border:1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-b {
+    display: inline-block;
+    background:#012677;
+    color: #fff;
+    border-radius: 10px;
+    margin-left: 2px;
+    margin-top: -5px;
+    padding: 8px 20px;
+}
+
+.btn-b:hover {
+    background:#012677;
+}
+
+.heading {
+    text-align: center;
+}
+
+.heading h2 {
+    font-size: 30px;
+}
+
+.heading span{
+    font-size: var(--p-font);
+    color: #012677;
+}
+
+.Skills{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, auto));
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 25px 0;
+}
+
+.Skill .skill-box {
+    width: 100%;
+    margin: 25px 0;
+}
+
+.skill-box .skill-bar {
+    background: var(--skill-bar-color);
+    margin-top: 6px;
+    border-radius: 6px;
+    width: 100%;
+    height: 8px;
+}
+
+.skill-bar .skill-per {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 90%;
+    border-radius: 6px;
+    opacity: 0;
+    animation: progress 0.4s ease-in-out forwards;
+    background: #012677;
+}
+
