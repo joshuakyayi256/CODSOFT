@@ -435,7 +435,7 @@ textarea {
     width: 100%;
     border: none;
     outline: none;
-    background:seashell;
+    background:lightblue;
     margin-bottom: 1rem;
     color: var(--text-color);
 }
@@ -478,4 +478,104 @@ footer {
 .footer-socials-icons {
     display: flex;
     gap: 30px;
+}
+
+.middle-footer .footer-menu {
+    display: flex;
+}
+
+.footer-menu-list a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-inline: 20px;
+}
+
+.footer-menu-list a:hover {
+    color: var(--hover);
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 30px;
+}
+
+.bottom-footer {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width:1024px) {
+    .featured-image {
+        justify-content: center;
+        min-height: 200px;
+        width: 100%;
+        margin-top: 20px;
+        margin-right: -28%;
+    }
+    .image,
+    .image img {
+        width: 400px;
+        height: 550px;
+    }
+}
+
+@media (max-width:970px) {
+    header {
+        padding: 18px 5%;
+    }
+    section {
+        padding: 50px 4%;
+    }
+}
+
+@media (max-width:770px) {
+    :root {
+        --big-font: 2.4rem;
+        --medium-font:1.2rem;
+    }
+    header{
+        padding: 11px 4%;
+    }
+    #menu-icon {
+        display: initial;
+        color: var(--text-color);
+    }
+
+    header .navbar {
+        position:absolute;
+        top: -500px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 4px rgb(0, 0, 0 / 10%);
+        background-color: var(--bg-color);
+        text-align: center;
+        transition: 0.2s;
+    }
+
+    .navbar.active {
+        top: 100px;
+    }
+    .navbar a {
+        padding: 1.5rem;
+        display: block;
+        background: var(--bg-color);
+    }
+
+    #darkmode {
+        position: absolute;
+        top: 1.4rem;
+        right: 2rem;
+    }
+
+    .about-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact-form form {
+        width: 420px;
+    }
 }
