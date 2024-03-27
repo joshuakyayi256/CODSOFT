@@ -58,3 +58,15 @@ const srRight = ScrollReveal ({
 
     srLeft.reveal('.portfolio-content', {delay: 200});
     srLeft.reveal('.skill', {delay: 100});
+
+
+// JavaScript for toggling project description visibility
+document.querySelectorAll('.project-img').forEach(project => {
+    project.addEventListener('mouseenter', () => {
+        project.querySelector('p').style.opacity = '1';
+    });
+
+    project.addEventListener('mouseleave', () => {
+        project.querySelector('p').style.opacity = '0';
+    });
+});

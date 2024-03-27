@@ -403,6 +403,37 @@ header.shadow {
 .project-img {
     overflow: hidden;
     border-radius: 0.5rem;
+    position: relative;
+}
+
+.project-img h3 {
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.project-img p {
+    position: absolute;
+    text-decoration: solid;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    font-size: 14px;
+    color:var(--text-color);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.project-img:hover p {
+    opacity: 1;
 }
 
 .project-img img {
