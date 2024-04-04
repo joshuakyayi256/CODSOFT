@@ -1,18 +1,16 @@
-const calculator = document.querySelector('.calculator');
 const display = document.getElementById('display');
 const buttonsContainer = document.getElementById('buttons');
-
 const themes = {
   light: {
     bg: '#fff',
-    buttonBg: '#e0e0e0',
-    buttonHoverBg: '#ccc',
+    buttonBg: '#b3e0b3', // light green
+    buttonHoverBg: '#99cc99', // darker green
     textColor: '#000'
   },
   dark: {
     bg: '#222',
-    buttonBg: '#444',
-    buttonHoverBg: '#666',
+    buttonBg: '#668c66', // dark green
+    buttonHoverBg: '#557755', // darker green
     textColor: '#fff'
   }
 };
@@ -49,9 +47,9 @@ function calculateResult() {
 }
 
 function applyTheme(theme) {
-  calculator.style.backgroundColor = theme.bg;
-  display.style.backgroundColor = theme.textColor;
-  display.style.color = theme.buttonBg;
+  document.body.style.backgroundColor = theme.bg;
+  display.style.backgroundColor = theme.bg;
+  display.style.color = theme.textColor;
   buttonsContainer.style.backgroundColor = theme.bg;
   buttonsContainer.style.color = theme.textColor;
 
@@ -87,3 +85,15 @@ buttonsContainer.appendChild(createButton('+', () => appendToDisplay('+')));
 buttonsContainer.appendChild(createButton('=', calculateResult));
 buttonsContainer.appendChild(createButton('Light', () => changeTheme('light')));
 buttonsContainer.appendChild(createButton('Dark', () => changeTheme('dark')));
+
+// Keyboard event listeners
+document.addEventListener('keydown', (event) => {
+  const key = event.key;
+  if (/\d/.test(key) || ['/', '*', '-', '+', '.', '='].includes(key)) {
+    appendToDisplay(key);
+  } else if (key === 'Enter') {
+    calculateResult();
+  } else if (key === 'Backspace') {
+    clearDisplay();
+  }
+});
